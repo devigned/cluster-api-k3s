@@ -1,9 +1,9 @@
 
 # Image URL to use all building/pushing image targets
-BOOTSTRAP_IMG ?= ghcr.io/zawachte/cluster-api-k3s/bootstrap-controller:v0.1.3
+BOOTSTRAP_IMG ?= ghcr.io/devigned/cluster-api-k3s/bootstrap-controller:v0.1.3
 
 # Image URL to use all building/pushing image targets
-CONTROLPLANE_IMG ?= ghcr.io/zawachte/cluster-api-k3s/controlplane-controller:v0.1.3
+CONTROLPLANE_IMG ?= ghcr.io/devigned/cluster-api-k3s/controlplane-controller:v0.1.3
 
 
 # Produce CRDs that work back to Kubernetes 1.11 (no version conversion)
@@ -145,7 +145,8 @@ TMP_DIR=$$(mktemp -d) ;\
 cd $$TMP_DIR ;\
 go mod init tmp ;\
 echo "Downloading $(2)" ;\
-GOBIN=$(PROJECT_DIR)/bin go get $(2) ;\
+echo "PROJECT_DIR $(PROJECT_DIR)" ;\
+GOBIN=$(PROJECT_DIR)/bin go install $(2) ;\
 rm -rf $$TMP_DIR ;\
 }
 endef

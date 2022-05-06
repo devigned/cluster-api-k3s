@@ -25,6 +25,8 @@ runcmd:
 {{- template "commands" .PreK3sCommands }}
   - 'curl -sfL https://get.k3s.io |  INSTALL_K3S_VERSION=%s sh -s - agent'
 {{- template "commands" .PostK3sCommands }}
+  - mkdir -p /run/cluster-api
+  - touch /run/cluster-api/bootstrap-success.complete
 `
 )
 

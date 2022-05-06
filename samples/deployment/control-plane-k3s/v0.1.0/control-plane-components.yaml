@@ -564,7 +564,7 @@ spec:
         - --enable-leader-election
         command:
         - /manager
-        image: ghcr.io/zawachte/cluster-api-k3s/controlplane-controller:v0.1.3
+        image: ghcr.io/devigned/cluster-api-k3s/controlplane-controller:v0.1.3
         name: manager
         resources:
           limits:

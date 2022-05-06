@@ -17,3 +17,7 @@
 
 bin/
 out/
+
+samples/azure/k3s-cluster.yaml
+
+.idea
